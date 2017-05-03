@@ -1,6 +1,6 @@
 # LTX-Template
 
-Main File calls input tex files from the tex folder.
+Main file calls input tex files from the tex folder.
 
 Assets located in images folder.
 
