@@ -1,0 +1,52 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.8in]{geometry} % Margins & page geometry
+\usepackage{titling} % Allow further customisation title page
+\usepackage{graphicx} % Allows inclusion of graphics
+\usepackage{helvet} % Font packagae - not in use.
+\usepackage[lofdepth,lotdepth]{subfig} % allows sub figures
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[colorlinks=true, linkcolor=black, citecolor=red]{hyperref}
+\usepackage{fancyhdr}
+
+\pagestyle{fancyplain}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+\rhead{Cormac Rogers}
+\lhead{\nouppercase\leftmark}
+\rfoot{\fancyplain{} Page \thepage}
+\graphicspath{{img/}} % Sets global graphics path to img folder
+\setcounter{tocdepth}{2} % Table of cvontents depth
+\setlength{\parskip}{\baselineskip} % Skip one line after each paragraph
+\setlength{\parindent}{0pt} % No paragraph indentation
+% Defines command to increment equation counter as aligned environment will not incremenet this.
+\newcommand{\tagaligneq}{\refstepcounter{equation}\tag{\theequation}}
+
+\begin{document}
+    \input{tex/title.tex}
+    \pagenumbering{roman}
+    \begin{minipage}[t]{\textwidth}
+        \tableofcontents
+        \addtocontents{toc}{~\hfill\textbf{Page}\par}
+        \addcontentsline{toc}{section}{Table of Contents}
+    \end{minipage}
+    \clearpage
+    \begin{minipage}[t]{\textwidth}
+        \listoffigures
+        \addtocontents{lof}{~\hfill\textbf{Page}\par}
+        \addcontentsline{toc}{section}{List Of Figures}
+    \end{minipage}
+    \clearpage
+    \pagenumbering{arabic}
+    \input{tex/ch1.tex}
+    \input{tex/ch2.tex}
+    \input{tex/ch3.tex}
+    \input{tex/ch4.tex}
+    \input{tex/ch5.tex}
+    \input{tex/ch6.tex}
+    \input{tex/ch7.tex}
+
+    \input{tex/ref.tex}
+\end{document}
